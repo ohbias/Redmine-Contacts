@@ -1,0 +1,20 @@
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'contacts', :plugin => 'redmine_contacts' %>
+<% end %>
+
+<div class="contextual">
+  <%= link_to "Contact List", {:controller => 'contacts', :action => 'index'} %> |
+  <%= link_to "Add contact", {:controller => 'contacts', :action => 'new'} %>
+</div>
+<h2><%= @contact[:first_name] %> <%= @contact[:last_name] %></h2>
+
+<div class="contact" id="contact<%= @contact[:id] %>">
+First name: <%= @contact[:first_name] %> <br/>
+Last name: <%= @contact[:last_name] %> <br/>
+Email: <%= @contact[:email] %> <br/>
+Address 1: <%= @contact[:address1] %> <br/>
+Address 2: <%= @contact[:address2] %> <br/>
+City: <%= @contact[:city] %> <br/>
+tate: <%= @contact[:state] %> <br/>
+</div>
+

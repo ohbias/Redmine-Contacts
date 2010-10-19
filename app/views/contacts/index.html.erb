@@ -1,0 +1,27 @@
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'contacts', :plugin => 'redmine_contacts' %>
+<% end %>
+
+<div class="contextual">
+  <%= link_to "Add contact", {:controller => 'contacts', :action => 'new'} %>
+</div>
+<h2>Contacts</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>City</th>
+    <th></th>
+  </tr>
+<% @contacts.each do |contact| %>
+<tr>
+  <td><%= contact[:first_name] %> <%= contact[:last_name] %></td>
+  <td><%= contact[:email] %></td>
+  <td><%= contact[:city] %></td>
+  <td><%=  link_to "Details", {:controller => 'contacts', :action => 'details', :id=> contact[:id]} %>
+      <%=  link_to "Edit", {:controller => 'contacts', :action => 'edit', :id=> contact[:id]} %>
+      <%=  link_to "Delete", {:controller => 'contacts', :action => 'destroy', :id=> contact[:id]} %></td>
+</tr>
+<% end %>
+</table>
