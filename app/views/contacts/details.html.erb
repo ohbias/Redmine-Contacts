@@ -3,8 +3,8 @@
 <% end %>
 
 <div class="contextual">
-  <%= link_to "Contact List", {:controller => 'contacts', :action => 'index'} %> |
-  <%= link_to "Add contact", {:controller => 'contacts', :action => 'new'} %>
+  <%= link_to "Contact List", {:controller => 'contacts', :action => 'index', :project_id => @project} %> |
+  <%= link_to "Add contact", {:controller => 'contacts', :action => 'new', :project_id => @project} %>
 </div>
 <h2><%= @contact[:first_name] %> <%= @contact[:last_name] %></h2>
 

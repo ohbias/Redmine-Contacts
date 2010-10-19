@@ -3,7 +3,7 @@
 <% end %>
 
 <div class="contextual">
-  <%= link_to "Add contact", {:controller => 'contacts', :action => 'new'} %>
+  <%= link_to "Add contact", {:controller => 'contacts', :action => 'new', :project_id => @project} %>
 </div>
 <h2>Contacts</h2>
 
@@ -19,9 +19,9 @@
   <td><%= contact[:first_name] %> <%= contact[:last_name] %></td>
   <td><%= contact[:email] %></td>
   <td><%= contact[:city] %></td>
-  <td><%=  link_to "Details", {:controller => 'contacts', :action => 'details', :id=> contact[:id]} %>
-      <%=  link_to "Edit", {:controller => 'contacts', :action => 'edit', :id=> contact[:id]} %>
-      <%=  link_to "Delete", {:controller => 'contacts', :action => 'destroy', :id=> contact[:id]} %></td>
+  <td><%=  link_to "Details", {:controller => 'contacts', :action => 'details', :id=> contact[:id], :project_id => @project} %>
+      <%=  link_to "Edit", {:controller => 'contacts', :action => 'edit', :id=> contact[:id], :project_id => @project} %>
+      <%=  link_to "Delete", {:controller => 'contacts', :action => 'destroy', :id=> contact[:id], :project_id => @project} %></td>
 </tr>
 <% end %>
 </table>

@@ -3,11 +3,11 @@
 <% end %>
 
 <div class="contextual">
-  <%= link_to "Contact List", {:controller => 'contacts', :action => 'index'} %>
+  <%= link_to "Contact List", {:controller => 'contacts', :action => 'index', :project_id => @project} %>
 </div>
 <h2>Edit Contact</h2>
 
-<% labelled_tabular_form_for :contact, @contact, :url =>{:action => 'update', :id => params[:id]} do |f|  %>
+<% labelled_tabular_form_for :contact, @contact, :url =>{:action => 'update', :id => params[:id], :project_id => @project} do |f|  %>
   <%= render :partial => 'form', :locals => {:f => f, :contact => @contact}  %>
   <%= submit_tag "Save" -%>
 <% end -%>
